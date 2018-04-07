@@ -1,0 +1,15 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/dear_alice_moon/config-repo  # 公用
+          clone-on-start: true
+          repos:
+            simple: https://gitee.com/dear_alice_moon/simple
+            special:
+              pattern: special*/dev*,special*/test*
+              uri: https://gitee.com/dear_alice_moon/special
+              cloneOnStart: false

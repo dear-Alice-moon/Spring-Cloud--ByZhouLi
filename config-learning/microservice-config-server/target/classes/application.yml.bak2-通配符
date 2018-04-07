@@ -1,0 +1,14 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/dear_alice_moon/{application}
+          #uri: https://gitee.com/dear_alice_moon/config-repo
+          #searchPaths: {application}
+
+#访问路径
+# http://localhost:8080/special-default.yml     
+    

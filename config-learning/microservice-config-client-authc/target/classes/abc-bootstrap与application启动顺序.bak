@@ -1,0 +1,6 @@
+1、bootstrap.yml与application.yml启动顺序  
+           对于Client客户端，在启动时：先加载bootstrap.*里面的配置 ---> 链接Config server，加载远程配置     
+--->  加载application.*里面的配置 
+
+--->  --->  --->   --->                               
+

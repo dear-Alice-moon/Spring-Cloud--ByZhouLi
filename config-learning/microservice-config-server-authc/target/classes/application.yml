@@ -1,0 +1,20 @@
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: password123
+server:
+  port: 8080
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/dear_alice_moon/config-repo
+
+# 访问路径为：
+# http://localhost:8080/foobar-dev.yml 等
+
+
+  

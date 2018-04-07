@@ -1,0 +1,18 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/dear_alice_moon/config-repo # 公用
+          search-paths:
+          - foo # foo路径
+          - bar # bar路径
+            
+
+# 浏览器访问路径
+# http://localhost:8080/bar-dev.properties         
+# http://localhost:8080/foo-dev.yml   
+
+              

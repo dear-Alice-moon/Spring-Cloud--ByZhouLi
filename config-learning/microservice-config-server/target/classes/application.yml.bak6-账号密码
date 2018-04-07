@@ -1,0 +1,14 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/dear_alice_moon/config-repo
+          # 私有仓库需要配置账号--密码
+          username: 
+          password:  
+  
+  
+  

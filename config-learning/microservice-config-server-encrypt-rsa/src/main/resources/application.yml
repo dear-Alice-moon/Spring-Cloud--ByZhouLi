@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/dear_alice_moon/config-repo
+
+encrypt:
+  keyStore: 
+    location: classpath:/server.jks
+    password: letmein
+    alias: mytestkey
+    secret: changeme  
+
+
+# 1、单独启动该项目后，在CMD窗口中输入命令：curl http://localhost:8080/encrypt -d myTest
+# 2、之后会生成一串字符串"...String..."
+# 3、在CMD窗口中输入命令：curl http://localhost:8080/decrypt -d ...String...
+# 4、之后，会反解码得到字符串：myTest
+#
+

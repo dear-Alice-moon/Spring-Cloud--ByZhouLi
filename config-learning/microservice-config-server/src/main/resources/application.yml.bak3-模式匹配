@@ -1,0 +1,27 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/dear_alice_moon/config-repo #公用
+          #uri: https://gitee.com/dear_alice_moon/config-repo.git #公用
+          #force-pull: true
+          repos: 
+            simple: https://gitee.com/dear_alice_moon/simple
+            #simple: https://gitee.com/dear_alice_moon/simple.git
+            special:
+              pattern: special*/dev*,special*/test*
+              uri: https://gitee.com/dear_alice_moon/special  # 该路径为上一个版本的Spring Cloud路径
+              #pattern: special-dev*,special-test*
+              #uri: https://gitee.com/dear_alice_moon/special.git
+              #force-pull: true
+
+# 浏览器访问路径
+# http://localhost:8080/special-default.yml             
+# http://localhost:8080/special-test.yml             
+# http://localhost:8080/special-dev.yml             
+# http://localhost:8080/simple-default.properties
+
+              
