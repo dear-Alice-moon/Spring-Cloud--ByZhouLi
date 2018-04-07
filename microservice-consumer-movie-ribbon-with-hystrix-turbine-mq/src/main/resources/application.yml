@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: microservice-consumer-movie-ribbon-with-hystrix-turbine-mq
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+server:
+  port: 8010
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://user:password123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+    

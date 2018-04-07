@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: microservice-gateway-zuul
+server:
+  port: 8040
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:password123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+zuul: 
+  routes: 
+    abc:
+      path: /user-url/**
+      service-id: http://localhost:7900/
+ribbon:
+  eureka:
+    enable: flase
+microservice-provider-user: # 这边是ribbon要请求的微服务serviceId
+  ribbon:
+    listOfServers: http://localhost:7900,http://localhost:7901
+

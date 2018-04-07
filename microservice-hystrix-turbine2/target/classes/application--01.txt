@@ -1,0 +1,11 @@
+server:
+  port: 8761
+eureka:
+  client:
+    # 为避免服务注册中心将自己也作为客户端来尝试注册，所以我们
+    # 禁用它的客户端注册行为
+    register-with-eureka: false  # 禁用注册中心注册自己
+    fetch-registry: false  # 由于注册中心的职责是维护服务实例，它并不需要去检索服务，所以设置为false。
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+

@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: microservice-gateway-zuul
+server:
+  port: 8040
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:password123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+zuul:
+  #ignored-services: '*'  # 忽略所有微服务，只对下列的'microservice-provider-user'的微服务进行反向代理
+  # 忽略'microservice-consumer-movie-ribbon-with-hystrix、microservice-consumer-movie-ribbon'2个微服务
+  ignored-services: microservice-consumer-movie-ribbon-with-hystrix,microservice-consumer-movie-ribbon  
+  routes: 
+    microservice-provider-user: /user/**
+    microservice-consumer-movie-ribbon: /ribbon/**
+    
+    
